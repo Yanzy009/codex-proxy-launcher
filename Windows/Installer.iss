@@ -1,5 +1,5 @@
 #define AppName "Codex 代理启动器"
-#define AppVersion "1.2.0"
+#define AppVersion "1.2.1"
 #define AppPublisher "Yanzy009"
 #define AppExeName "CodexProxyLauncher.exe"
 
