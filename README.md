@@ -1,18 +1,30 @@
 # Codex 代理启动器
 
-为使用本机 HTTP 代理的 macOS 用户提供一个更顺畅的 Codex 启动入口。如果 Codex 的 WebSocket 连接没有正确使用系统代理，任务开始时可能连续显示“重新连接 1/5 … 5/5”，随后才通过 HTTP 继续。这个启动器会在打开官方 Codex 应用时注入代理环境变量，让 Codex 的网络连接使用你指定的代理。
+为使用本机 HTTP 代理的 macOS 与 Windows 用户提供一个更顺畅的 Codex 启动入口。如果 Codex 的 WebSocket 连接没有正确使用系统代理，任务开始时可能连续显示“重新连接 1/5 … 5/5”，随后才通过 HTTP 继续。这个启动器会在打开官方 ChatGPT / Codex 桌面应用时注入代理环境变量，让新启动的进程使用你指定的代理。
 
 ## 为什么使用它
 
-- **一次设置，日常一键启动**：首次填写代理地址；之后像普通 App 一样从 Dock 打开 Codex。
+- **一次设置，日常一键启动**：首次填写代理地址；之后从 macOS Dock 或 Windows 开始菜单打开 Codex。
 - **适配常见本地代理**：可填写 Clash、Shadowsocks 等软件提供的 HTTP 或混合代理端口，不限于 `7897`。
-- **自动寻找官方 Codex**：按应用标识定位安装位置；若自动定位不到，可手动选择。
+- **自动寻找官方应用**：定位 ChatGPT / Codex 的安装位置；若自动定位不到，可手动选择。
 - **保护正在执行的任务**：Codex 已运行时，由你选择重启或直接切换；启动器不会强制结束进程。
-- **独立、轻量、易维护**：不修改 Codex 安装包，不替换系统代理设置。应用包同时包含 Apple Silicon 与 Intel 两种架构，图标为本项目原创。
+- **独立、轻量、易维护**：不修改官方应用，不永久替换系统代理设置。macOS 包同时包含 Apple Silicon 与 Intel 两种架构；Windows 提供 x64 安装包。
 
 这个项目是社区工具，与 OpenAI 无官方关联。它适合“浏览器/HTTP 正常，但 Codex 新任务前 WebSocket 多次超时”的情况；网络中断、代理节点故障等其他原因仍需要单独排查。
 
-## 下载与使用
+## Windows 下载与使用
+
+1. 从 GitHub Releases 下载 `Codex-Proxy-Launcher-Windows-x64-setup.exe`，并核对同名 `.sha256` 文件。
+2. 启动本机代理软件，确认其 HTTP 或混合代理端口。
+3. 安装并打开“Codex 代理启动器”，填写如 `http://127.0.0.1:7897` 的地址。
+4. 点击“检测代理”。若未自动找到官方应用，手动选择 `ChatGPT.exe` 或旧版 `Codex.exe`。
+5. 点击“启动 Codex”。以后先启动代理软件，再从本启动器进入 Codex。
+
+完整说明见 [Windows 使用说明](Docs/Windows使用说明.md)。
+
+![Windows 使用流程图](Docs/Windows使用流程图.svg)
+
+## macOS 下载与使用
 
 1. 从 GitHub Releases 下载 `Codex-Proxy-Launcher-macOS-universal.zip`，解压后将 `Codex代理启动器.app` 拖进“应用程序”。
 2. 启动你的本机代理软件，确认它提供 HTTP 或混合代理端口。
@@ -42,5 +54,7 @@ GitHub 下载的 App 采用本地临时签名，没有 Apple Developer ID。macO
 ```
 
 `release.sh` 会生成通用架构 ZIP 及 `.sha256` 文件，可作为 GitHub Release 附件。`test.sh` 会执行代理地址解析与环境变量测试、应用包检查，以及不启动 Codex 的环境自检。发布前请在一台未配置过本启动器的 Apple Silicon Mac 和一台 Intel Mac 上验证首次设置、首次打开、代理异常提示与安全重启流程。
+
+Windows 版本位于 `Windows/`，使用 .NET Framework 4.8 WinForms 与 Inno Setup。推送版本标签后，GitHub Actions 会在 `windows-latest` 上执行核心测试、构建安装器并生成 SHA-256；附件先进入 Draft Release，验收后再正式发布。
 
 许可证为 [MIT](LICENSE)。

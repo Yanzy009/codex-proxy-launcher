@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1080" viewBox="0 0 1400 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fafc"/>
+      <stop offset="1" stop-color="#e8f7f4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#24314f" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#31a99a"/>
+    </marker>
+    <style>
+      .title { font: 700 48px "Microsoft YaHei", "PingFang SC", sans-serif; fill: #1f294f; }
+      .subtitle { font: 400 22px "Microsoft YaHei", "PingFang SC", sans-serif; fill: #64748b; }
+      .step { font: 700 25px "Microsoft YaHei", "PingFang SC", sans-serif; fill: #1f294f; }
+      .detail { font: 400 19px "Microsoft YaHei", "PingFang SC", sans-serif; fill: #526076; }
+      .number { font: 700 25px "Microsoft YaHei", "PingFang SC", sans-serif; fill: white; }
+      .tag { font: 700 19px "Microsoft YaHei", "PingFang SC", sans-serif; fill: #167b70; }
+    </style>
+  </defs>
+  <rect width="1400" height="1080" fill="url(#bg)"/>
+  <text x="700" y="78" text-anchor="middle" class="title">Windows 使用流程</text>
+  <text x="700" y="118" text-anchor="middle" class="subtitle">先启动代理软件，再通过专用启动器进入 Codex</text>
+
+  <g filter="url(#shadow)">
+    <rect x="165" y="165" width="1070" height="118" rx="24" fill="white"/>
+    <circle cx="225" cy="224" r="31" fill="#31a99a"/>
+    <text x="225" y="233" text-anchor="middle" class="number">1</text>
+    <text x="285" y="211" class="step">安装官方 ChatGPT Windows 桌面应用</text>
+    <text x="285" y="247" class="detail">登录账号，在桌面应用中确认能够进入 Codex。</text>
+  </g>
+  <line x1="700" y1="286" x2="700" y2="324" stroke="#31a99a" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="165" y="338" width="1070" height="118" rx="24" fill="white"/>
+    <circle cx="225" cy="397" r="31" fill="#31a99a"/>
+    <text x="225" y="406" text-anchor="middle" class="number">2</text>
+    <text x="285" y="384" class="step">启动代理软件并确认 HTTP / 混合端口</text>
+    <text x="285" y="420" class="detail">例如 Clash 的 7897，或 v2rayN 中显示的 HTTP 端口。</text>
+  </g>
+  <line x1="700" y1="459" x2="700" y2="497" stroke="#31a99a" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="165" y="511" width="1070" height="138" rx="24" fill="white"/>
+    <circle cx="225" cy="580" r="31" fill="#31a99a"/>
+    <text x="225" y="589" text-anchor="middle" class="number">3</text>
+    <text x="285" y="557" class="step">打开 Codex 代理启动器</text>
+    <text x="285" y="594" class="detail">填写代理地址，例如：</text>
+    <rect x="520" y="568" width="320" height="43" rx="12" fill="#e7f8f5"/>
+    <text x="680" y="596" text-anchor="middle" class="tag">http://127.0.0.1:7897</text>
+    <text x="285" y="628" class="detail">点击“检测代理”；若未自动找到应用，再手动选择 ChatGPT.exe。</text>
+  </g>
+  <line x1="700" y1="652" x2="700" y2="690" stroke="#31a99a" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="165" y="704" width="1070" height="118" rx="24" fill="#1f294f"/>
+    <circle cx="225" cy="763" r="31" fill="#48d9c8"/>
+    <text x="225" y="772" text-anchor="middle" class="number">4</text>
+    <text x="285" y="750" class="step" fill="white" style="fill:white">点击“启动 Codex”</text>
+    <text x="285" y="786" class="detail" fill="#d9e6f2" style="fill:#d9e6f2">启动器向新进程注入代理环境变量，然后打开官方应用。</text>
+  </g>
+  <line x1="700" y1="825" x2="700" y2="863" stroke="#31a99a" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="165" y="877" width="500" height="126" rx="24" fill="#e7f8f5" stroke="#31a99a" stroke-width="3"/>
+    <text x="415" y="926" text-anchor="middle" class="step">连接正常</text>
+    <text x="415" y="963" text-anchor="middle" class="detail">以后重复步骤 2 和 4 即可</text>
+    <text x="415" y="991" text-anchor="middle" class="tag">开始使用 Codex</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="735" y="877" width="500" height="126" rx="24" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+    <text x="985" y="926" text-anchor="middle" class="step">仍然反复重连</text>
+    <text x="985" y="963" text-anchor="middle" class="detail">检查端口、节点、代理规则和 WebSocket</text>
+    <text x="985" y="991" text-anchor="middle" class="tag" style="fill:#b45309">换可用节点后重新启动</text>
+  </g>
+  <text x="700" y="1050" text-anchor="middle" class="subtitle">安全提示：仅从 Yanzy009/codex-proxy-launcher 下载，并核对 SHA-256</text>
+</svg>

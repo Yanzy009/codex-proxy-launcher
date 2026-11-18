@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>CodexProxyLauncher.Windows</RootNamespace>
+    <AssemblyName>CodexProxyLauncher</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon Condition="Exists('Assets\CodexProxy.ico')">Assets\CodexProxy.ico</ApplicationIcon>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <Version>1.2.0</Version>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Product>Codex 代理启动器</Product>
+    <Company>Yanzy009</Company>
+    <Copyright>MIT License</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\Docs\Windows使用流程图.svg" Link="Windows使用流程图.svg" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Docs\Windows使用说明.md" Link="Windows使用说明.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,2 +1,7 @@
 dist/
+Windows/bin/
+Windows/obj/
+Windows/Tests/bin/
+Windows/Tests/obj/
+Windows/Assets/CodexProxy.ico
 .DS_Store
