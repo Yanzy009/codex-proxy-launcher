@@ -1,5 +1,5 @@
 #define AppName "Codex 代理启动器"
-#define AppVersion "1.2.1"
+#define AppVersion "1.2.2"
 #define AppPublisher "Yanzy009"
 #define AppExeName "CodexProxyLauncher.exe"
 
@@ -22,9 +22,6 @@ WizardStyle=modern
 UninstallDisplayIcon={app}\{#AppExeName}
 LicenseFile=..\LICENSE
 SetupIconFile=Assets\CodexProxy.ico
-
-[Languages]
-Name: "chinesesimp"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 
 [Files]
 Source: "bin\Release\net48\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

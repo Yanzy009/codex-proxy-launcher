@@ -9,9 +9,9 @@
     <ApplicationIcon Condition="Exists('Assets\CodexProxy.ico')">Assets\CodexProxy.ico</ApplicationIcon>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
-    <Version>1.2.1</Version>
-    <AssemblyVersion>1.2.1.0</AssemblyVersion>
-    <FileVersion>1.2.1.0</FileVersion>
+    <Version>1.2.2</Version>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <FileVersion>1.2.2.0</FileVersion>
     <Product>Codex 代理启动器</Product>
     <Company>Yanzy009</Company>
     <Copyright>MIT License</Copyright>
